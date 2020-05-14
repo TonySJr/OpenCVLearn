@@ -64,7 +64,7 @@ int main(int argc, char* argv[])
 		cout << "\t Arg 3: webcam video, 0 - off , 1 - on" << endl;
 		return -1;
 	}
-	
+
 	string img_path = string(argv[1]);
 	int color = atoi(argv[2]);
 	int webcam = atoi(argv[3]);
@@ -163,7 +163,7 @@ void floydditter(Mat& img)
 			uint8_t newpixel = (uint8_t)(round(oldpixel/255.0)*255);
 			img.at<uint8_t>(y, x) = newpixel;
 			error = (oldpixel - newpixel) / del;
-			
+
 			for (int count = 0; count < matrix.cols; count++)
 			{
 				uint8_t nextpixel = img.at<uint8_t>(y + dirY[count], x + dirX[count]);
